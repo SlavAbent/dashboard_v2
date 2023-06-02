@@ -7,3 +7,4 @@ MongoDB
 Typescript
 Socket.Io
 Tailwind
+RTK + Query
