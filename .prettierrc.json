@@ -4,13 +4,15 @@
 	"useTabs": true,
 	"semi": false,
 	"jsxSingleQuote": true,
+	"quotes": false,
 	"quoteProps": "consistent",
 	"singleQuote": true,
 	"trailingComma": "es5",
-	"bracketSpacing": true,
+	"bracketSpacing": false,
 	"bracketSameLine": false,
-	"jsxBracketSameLine": false,
-	"arrowParens": "avoid",
+	"arrowParens": "always",
 	"proseWrap": "always",
-	"singleAttributePerLine": true
+	"singleAttributePerLine": true,
+	"parser": "babel-ts",
+	"requirePragma": true
 }

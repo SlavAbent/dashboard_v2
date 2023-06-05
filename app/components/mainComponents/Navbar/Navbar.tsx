@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
-import NotificationPanel from '@/app/components/NotificationPanel/NotificationPanel'
-import Calendar from '@/app/components/Icons/Calendar'
-import Time from '@/app/components/Icons/Time'
-import SearchPanel from '@/app/components/SearchPanel/SearchPanel'
-import { Avatar } from '@/app/components/Avatar/Avatar'
+import NotificationPanel from '@/app/components/ui/NotificationPanel/NotificationPanel'
+import Calendar from '@/app/components/ui/Icons/Calendar'
+import Time from '@/app/components/ui/Icons/Time'
+import SearchPanel from '@/app/components/ui/SearchPanel'
+import { Avatar } from '@/app/components/ui/Avatar/Avatar'
 
 export interface NavbarProps {
 	title?: string
