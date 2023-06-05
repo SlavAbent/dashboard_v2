@@ -1,13 +1,14 @@
 'use client'
 
 import React from 'react'
-import UserLinks from '@/app/components/UserLinks/UserLinks'
-import Logo from '@/app/components/Icons/Logo'
+import AsideRoutes from '@/app/components/Routes/AsideRoutes'
+import Logo from '@/app/components/ui/Icons/Logo'
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5'
-import { routes } from '@/app/routes'
+import { routes } from '@/app/utils/routes'
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleSwitchAside } from '@/app/redux/panels/panelsSlice'
+import { toggleSwitchAside, toggleSwitchProjects } from '@/app/redux/panels/panelsSlice'
 import { RootState } from '@/app/redux/store'
+import Toggle from '@/app/components/ui/Icons/Toggler'
 
 const theme = 'dark'
 
@@ -18,7 +19,7 @@ const Aside = () => {
 	return (
 		<div
 			className={`
-				${toggleAsidePanel ? 'w-[150px]' : 'w-auto'}
+				${toggleAsidePanel ? 'w-[150px]' : 'w-[68px]'}
 				flex
 				flex-col
 				bg-gray-950
@@ -30,13 +31,19 @@ const Aside = () => {
 			`}
 		>
 			<Logo
-				className="flex items-start "
+				className='flex items-center '
 				size={36}
 				color='#ffffff'
 				onClick={() => dispatch(toggleSwitchAside())}
 			/>
+			<Toggle
+				size={20}
+				color='#ffffff'
+				className='cursor-pointer flex items-center justify-center'
+				onClick={() => dispatch(toggleSwitchProjects())}
+			/>
 			<div className='flex flex-grow flex-col'>
-				<UserLinks routes={routes} />
+				<AsideRoutes routes={routes} />
 			</div>
 			<div className='cursor-pointer p-4 flex justify-center items-center'>
 				{theme === 'dark' ? (

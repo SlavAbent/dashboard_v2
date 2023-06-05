@@ -1,4 +1,4 @@
-import './globals.css'
+import './utils/styles/globals.css'
 import { Nunito } from 'next/font/google'
 import { ReactNode } from 'react'
 import Main from '@/app/main'
@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang='en'>
 			<body className={font.className}>
+			{/* eslint-disable-next-line react/no-children-prop */}
 				<Main children={children} />
 			</body>
 		</html>
