@@ -15,7 +15,7 @@ const theme = 'dark'
 const Aside = () => {
 	const dispatch = useDispatch()
 	const toggleAsidePanel = useSelector((state: RootState) => state.panels.isActiveAside)
-
+	const toggleActiveProjects = useSelector((state: RootState) => state.panels.isActiveProjects)
 	return (
 		<div
 			className={`
@@ -31,16 +31,17 @@ const Aside = () => {
 			`}
 		>
 			<Logo
-				className='flex items-center '
+				className='flex items-center justify-center'
 				size={36}
 				color='#ffffff'
 				onClick={() => dispatch(toggleSwitchAside())}
 			/>
 			<Toggle
-				size={20}
+				size={18}
 				color='#ffffff'
 				className='cursor-pointer flex items-center justify-center'
 				onClick={() => dispatch(toggleSwitchProjects())}
+				toggle={toggleActiveProjects}
 			/>
 			<div className='flex flex-grow flex-col'>
 				<AsideRoutes routes={routes} />

@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-	isActiveProjects: true,
+	isActiveProjects: false,
 	isActiveAside: false,
 }
 

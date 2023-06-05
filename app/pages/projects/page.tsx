@@ -24,56 +24,67 @@ const ProjectsPage = () => {
 				return (
 					<div
 						key={uniqueId(`list_${id}`)}
-						className='mb-6'
+						className={`
+						 transition-all
+						 duration-300
+						 ease-out
+						 mb-6
+						 ${togglePanel ? 'opacity-100 w-auto pl-2' : 'opacity-0 w-0'}
+						`}
 					>
 						<ProjectsRow
 							data={item.color}
 							rowName={name}
 							href={href}
+							togglePanel={togglePanel}
 						/>
 					</div>
 				)
 			})
 		)
-	}, [data, isLoading])
+	}, [data, isLoading, togglePanel])
 
 	return (
 		<>
-			{togglePanel && (
-				<div className='flex flex-col items-start bg-gray-900 h-full p-6'>
-					<div
+			<div className={`
+				flex 
+				flex-col 
+				items-start
+				bg-gray-900 
+				h-full 
+				p-6
+				transition-all
+				duration-300
+				ease-out
+				${togglePanel ? 'w-[300px]' : 'transform -translate-x-[0px] p-0 pt-6 overflow-hidden opacity-0 pointer-events-none'}
+			`}>
+				<div
+					className={`
+						relative
+						flex
+						justify-between
+						w-full
+						mb-6
+					`}
+				>
+
+					<p
 						className={`
-							relative
-							flex
-							justify-between
-							 ${
-									togglePanel
-										? 'w-[300px] flex items-start'
-										: 'w-auto flex items-center justify-start' 
-							 } 		
-							 transition-width
-							 duration-300
-							 mb-6
+						 transition-all
+						 duration-300
+						 ease-out
+						 ${togglePanel ? 'opacity-100 w-auto pl-2' : 'opacity-0 w-0'}
+						 text-slate-50 pl-2
+						 pointer-events-none
 						`}
 					>
-
-						<p
-							className={`
-							 transition-all
-							 duration-300
-							 ease-out
-							 ${togglePanel ? 'opacity-100 w-auto pl-2' : 'opacity-0 w-0'}
-							 text-slate-50 pl-2
-							 pointer-events-none
-			    			`}
-						>
-							Projects
-						</p>
-						<span className="text-white">{ data && data.length }</span>
-					</div>
-					<div className='flex flex-col items-start'>{list}</div>
+						Проекты
+					</p>
+					<span className="text-white">{ data && data.length }</span>
 				</div>
-			)}
+				<div className='flex flex-col items-start'>{list}</div>
+			</div>
+
 		</>
 	)
 }

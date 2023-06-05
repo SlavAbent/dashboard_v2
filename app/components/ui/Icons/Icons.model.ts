@@ -5,3 +5,7 @@ export interface IconsModel {
 	onClick?: () => void
 	className?: string
 }
+
+export interface TogglerProps extends IconsModel{
+	toggle: boolean
+}

@@ -5,7 +5,15 @@ import { IAvatarProps } from './model/Avatar.model'
 import Image from 'next/image'
 
 export const Avatar: React.FC<IAvatarProps> = props => {
-	const { src, size = 32, className, title, status = 'success', onClick } = props
+	const {
+		src,
+		size = 32,
+		className,
+		title,
+		status = 'success',
+		onClick,
+		children,
+	} = props
 
 	const sizeBox = size - 4
 	const sizeInner = size - 8
@@ -55,6 +63,7 @@ export const Avatar: React.FC<IAvatarProps> = props => {
 						{title}
 					</div>
 				)}
+				{children && <>{children}</>}
 			</div>
 			<div
 				className='absolute -top-1 -left-1 z-1001 rounded-full border-2 border-white-950'

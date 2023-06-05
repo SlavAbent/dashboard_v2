@@ -33,20 +33,17 @@ const AsideRoutes: FC<UserLinksProps> = ({ routes }) => {
 						>
 							<Link href={href}>
 								<span className='flex text-white p-4 pb-0 pt-0'>
-									<i
-										className={`pl-1
-				  					${toggleAsidePanel ? 'items-start' : 'items-center'}
-								`}
-									>
-										{icon}
+									<i className={`pl-1
+				  						${toggleAsidePanel ? 'items-start' : 'items-center'}
+									`}
+									>{icon}
 									</i>
-									<p
-										className={`
-									transition-all
-				  					duration-300
-				  					ease-out
-				  					${toggleAsidePanel ? 'opacity-100 w-auto pl-2' : 'opacity-0 w-0'}
-								`}
+									<p className={`
+											transition-all
+											duration-300
+											ease-out
+											${toggleAsidePanel ? 'opacity-100 w-auto pl-2' : 'opacity-0 w-0'}
+										`}
 									>
 										{name}
 									</p>

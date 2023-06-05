@@ -1,18 +1,30 @@
 import React, { FC } from 'react'
-import { AiOutlineAlignLeft } from 'react-icons/ai'
-import { IconsModel } from '@/app/components/ui/Icons/Icons.model'
+import { TfiAngleDoubleRight, TfiLayoutColumn3 } from 'react-icons/tfi'
+import {TogglerProps} from '@/app/components/ui/Icons/Icons.model'
 
-const Toggle: FC<IconsModel> = props => {
-	const { color, size, onClick, className } = props
+const Toggle: FC<TogglerProps> = props => {
+	const {
+		color,
+		size,
+		onClick,
+		className,
+		toggle
+	} = props
+
 	return (
-		<div
-			className={className}
-			onClick={onClick}
-		>
-			<AiOutlineAlignLeft
-				size={size}
-				color={color}
-			/>
+		<div className={className} onClick={onClick}>
+			{ toggle ? (
+				<TfiLayoutColumn3
+					size={size}
+					color={color}
+				/>
+			) : (
+				<TfiAngleDoubleRight
+					size={size}
+					color={color}
+				/>
+			) }
+
 		</div>
 	)
 }

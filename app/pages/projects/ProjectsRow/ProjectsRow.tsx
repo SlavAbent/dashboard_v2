@@ -9,10 +9,11 @@ interface ProjectRowProps {
 	href: string
 	rowName: string
 	data: Color
+	togglePanel?: boolean
 }
 
 const ProjectsRow: FC<ProjectRowProps> = props => {
-	const { href, rowName, data } = props
+	const { href, rowName, data, togglePanel } = props
 	const router = useRouter()
 	const { id, hex, name } = data
 	// const className = cn('badge', { [`badge--${name}`]: href}, 'default') // Todo fix the styles problem in tailwindcss
@@ -29,7 +30,7 @@ const ProjectsRow: FC<ProjectRowProps> = props => {
 				color='custom--badge'
 			/>
 			<button onClick={() => router.push(`projects/${href}`)}>
-				<span className='text-white'>{rowName}</span>
+				<span className={`${togglePanel ? 'block text-white' : 'hidden'}`}>{rowName}</span>
 			</button>
 		</div>
 	)

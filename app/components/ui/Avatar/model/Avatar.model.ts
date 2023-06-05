@@ -1,4 +1,4 @@
-import React from 'react'
+import {MouseEventHandler, ReactNode} from 'react'
 
 export type statusType = 'success' | 'warning' | 'error'
 
@@ -8,5 +8,6 @@ export interface IAvatarProps {
 	size?: number
 	title?: string
 	status?: statusType
-	onClick?: (event: React.MouseEvent) => void
+	onClick?: MouseEventHandler<HTMLDivElement>
+	children?: ReactNode
 }
