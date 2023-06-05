@@ -52,11 +52,10 @@ const ProjectsPage = () => {
 				items-start
 				bg-gray-900 
 				h-full 
-				p-6
 				transition-all
 				duration-300
 				ease-out
-				${togglePanel ? 'w-[300px]' : 'transform -translate-x-[0px] p-0 pt-6 overflow-hidden opacity-0 pointer-events-none'}
+				${togglePanel ? 'w-[300px] p-6' : 'transform translate-x-[0px] p-0 pt-6 overflow-hidden opacity-0 pointer-events-none'}
 			`}>
 				<div
 					className={`
